@@ -1,0 +1,158 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  /* Variable declaration - palette colors */
+  --dark: #293241;
+  --orange: #EE6C4D;
+  --bright: #E0FBFC;
+  --blue: #98C1D9;
+  --dark-blue: #3D5A80;
+}
+
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color: var(--dark);
+  background-color: var(--bright);
+  font-size: larger;
+
+}
+
+/* Navigation CSS */
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: var(--dark);
+  
+}
+
+#navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--blue);
+  
+}
+
+/* Hero */
+.hero-banner {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  min-height: 200px;
+
+}
+
+.hero-banner h2 {
+  color: var(--orange);
+}
+
+
+h1 {
+  background-color: var(--blue);
+  margin-bottom: 0;
+}
+
+a {
+  color: var(--blue);
+  margin: 0 10px 0 10px;
+  font-size: large;
+  
+}
+
+/* Page - projects */
+
+h2 {
+  border-right: 3px solid var(--dark);
+  display: block;
+}
+
+.page-section {
+  display: grid;
+  grid-template-columns: 20% 80%;
+
+}
+
+
+#about p {
+  padding: 20px;
+  text-align: justify;
+}
+
+#project1 {
+  background-image: url("../images/02-portfolio-2.jpg");
+  
+}
+
+#project2 {
+  background-image: url("../images/02-portfolio-3.jpg");
+}
+
+#project3 {
+  background-image: url("../images/02-portfolio-4.jpg");
+}
+
+#project4 {
+  background-image: url("../images/02-portfolio-3.jpg");
+}
+
+#project5 {
+  background-image: url("../images/02-portfolio-4.jpg");
+}
+
+.flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.flex-item {
+  display: flex;
+  align-items: flex-end;
+  flex-basis: calc(50% - 1em);
+  margin: .5em;
+  min-height: 200px;
+}
+
+.flex-item:first-child {
+  min-height: 400px;
+  flex-basis: 100%;
+}
+
+.flex-item div {
+  background-color: var(--orange);
+  padding: 10px;
+}
+
+
+/* Contact section */
+
+#contact footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  
+}
+
+.footer a {
+  color: var(--dark);
+}
+
+/* Media queries */
+@media screen and (max-width: 667px){
+  .flex-item {
+    flex-basis: 100%;
+  }
+  .flex-item:first-child {
+    min-height: 200px;
+  }
+}
