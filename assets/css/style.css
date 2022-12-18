@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  
 }
 
 :root {
@@ -10,7 +11,6 @@
   --blue: #98C1D9;
   --dark-blue: #3D5A80;
 }
-
 
 body {
   margin: 0;
@@ -27,7 +27,9 @@ body {
 header {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-between;
+  align-items: center;
   background-color: var(--dark);
   
 }
@@ -35,60 +37,70 @@ header {
 #navbar {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   color: var(--blue);
   
 }
 
-/* Hero */
-.hero-banner {
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
-  min-height: 200px;
-
-}
-
-.hero-banner h2 {
+#navbar p a:hover {
   color: var(--orange);
 }
 
-
 h1 {
-  background-color: var(--blue);
+  color: var(--blue);
   margin-bottom: 0;
+  padding-left: 20px;
+  display: block;
 }
 
 a {
   color: var(--blue);
   margin: 0 10px 0 10px;
   font-size: large;
+}
+
+/* Hero section */
+.hero-banner {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  min-height: 300px;
+  background-image: linear-gradient(
+    180deg,rgba(41, 50, 65), rgba(224, 251, 252));
+}
+
+.hero-banner h2 {
+  color: var(--orange);
   
 }
 
-/* Page - projects */
+/* Projects section*/
 
-h2 {
-  border-right: 3px solid var(--dark);
-  display: block;
+.page-section h2 {
+  border-right: 3px solid var(--orange);
+  color: var(--orange);
+  text-align: right;
+  padding-right: 10px;
+  
 }
 
 .page-section {
   display: grid;
-  grid-template-columns: 20% 80%;
+  grid-template-columns: 200px 1fr;
 
 }
-
 
 #about p {
   padding: 20px;
   text-align: justify;
+  display: block;
 }
 
 #project1 {
   background-image: url("../images/02-portfolio-2.jpg");
-  
 }
 
 #project2 {
@@ -119,11 +131,14 @@ h2 {
   align-items: flex-end;
   flex-basis: calc(50% - 1em);
   margin: .5em;
-  min-height: 200px;
+  min-height: 300px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .flex-item:first-child {
-  min-height: 400px;
+  min-height: 300px;
   flex-basis: 100%;
 }
 
@@ -132,7 +147,6 @@ h2 {
   padding: 10px;
 }
 
-
 /* Contact section */
 
 #contact footer {
@@ -140,19 +154,35 @@ h2 {
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  
 }
 
 .footer a {
   color: var(--dark);
 }
 
-/* Media queries */
-@media screen and (max-width: 667px){
+/* Media queries mobile */
+
+@media screen and (max-width: 960px) and (min-width: 375px){
+  header {
+    justify-content: center;
+  }
+  h2 {
+    text-align: center;
+  }
+  .page-wrapper h2 {
+    text-align: center;
+    border-right: none;
+    border-bottom: 3px solid var(--orange);
+    margin: 10px;
+  }
   .flex-item {
     flex-basis: 100%;
   }
   .flex-item:first-child {
-    min-height: 200px;
+    min-height: 300px;
+  }
+  .page-section {
+    display: grid;
+    grid-template-columns: 1fr;
   }
 }
